@@ -1,2 +1,109 @@
-<script src='build/main.bundle.js'></script>
-Hello World
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Visual Keyboard</title>
+  <style>
+    .div_center{
+	  margin: 50px auto;
+	  align-items: center;
+	  width: 650px;
+	  background:white;
+    }
+    body {
+	  background:#F4D03F;
+    }
+	.btn{
+	  color: white;
+	  font-family: verdana;
+	  text-align: center;
+	  background: #2874A6;
+      border-radius: 8px;
+      line-height: 60px;
+      width: 60px;
+      height: 60px;
+      float:left;
+	  margin-right: 5px;
+	  margin-bottom: 5px;
+	  cursor: pointer;
+    }
+    .btn:hover {
+      background: #E74C3C;
+    }
+	  
+
+  </style>
+</head>
+<body>
+<center><img src="type_here.gif"></center>
+
+<center><textarea  id="yourtext" style="width: 750px; height: 150px; background:#0000FF; font-family: verdana; color:#FFFF33;"></textarea></center>
+<div class="div_center">
+	<div class="btn" onclick="type(this);">1</div>
+	<div class="btn" onclick="type(this);">2</div>
+	<div class="btn" onclick="type(this);">3</div>
+	<div class="btn" onclick="type(this);">4</div>
+	<div class="btn" onclick="type(this);">5</div>
+	<div class="btn" onclick="type(this);">6</div>
+	<div class="btn" onclick="type(this);">7</div>
+	<div class="btn" onclick="type(this);">8</div>
+	<div class="btn" onclick="type(this);">9</div>
+	<div class="btn" onclick="type(this);">0</div>
+	
+	<div class="btn" onclick="type(this);">Q</div>
+	<div class="btn" onclick="type(this);">W</div>
+	<div class="btn" onclick="type(this);">E</div>
+	<div class="btn" onclick="type(this);">R</div>
+	<div class="btn" onclick="type(this);">T</div>
+	<div class="btn" onclick="type(this);">Y</div>
+	<div class="btn" onclick="type(this);;">U</div>
+	<div class="btn" onclick="type(this);">I</div>
+	<div class="btn" onclick="type(this);">O</div>
+	<div class="btn" onclick="type(this);">P</div>
+	
+	<div class="btn" onclick="type(this);">A</div>
+	<div class="btn" onclick="type(this);">S</div>
+	<div class="btn" onclick="type(this);">D</div>
+	<div class="btn" onclick="type(this);">F</div>
+	<div class="btn" onclick="type(this);">G</div>
+	<div class="btn" onclick="type(this);">H</div>
+	<div class="btn" onclick="type(this);">J</div>
+	<div class="btn" onclick="type(this);">K</div>
+	<div class="btn" onclick="type(this);">L</div>
+	<div class="btn" onclick="typeDel();">DEL</div>
+	
+	<div class="btn" onclick="typeClear();">CLEAR</div>
+	<div class="btn" onclick="type(this);">Z</div>
+	<div class="btn" onclick="type(this);">X</div>
+	<div class="btn" onclick="type(this);">C</div>
+	<div class="btn" onclick="type(this);">V</div>
+	<div class="btn" onclick="type(this);">B</div>
+	<div class="btn" onclick="type(this);">N</div>
+	<div class="btn" onclick="type(this);">M</div>
+	<div class="btn" onclick="typeEnter();" style="width:125px;">ENTER</div>
+	
+	<div class="btn" onclick="typeSpace();" style="width:645px;"> </div>
+	
+</div>
+<script>
+
+function type(t){
+	var str = t.innerHTML;
+	document.getElementById("yourtext").value = document.getElementById("yourtext").value + str ;  
+}
+function typeDel(){
+	var str = document.getElementById("yourtext").value;
+	str = str.substr(0, str.length - 1);
+	document.getElementById("yourtext").value = str;  
+}
+function typeSpace(){
+	document.getElementById("yourtext").value = document.getElementById("yourtext").value + " " ;  
+}
+function typeEnter(){
+	document.getElementById("yourtext").value = document.getElementById("yourtext").value + "\n" ;  
+}
+function typeClear(){
+	document.getElementById("yourtext").value = " ";  
+}
+</script>
+</body>
+</html>
